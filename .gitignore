@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+nounkoun/nounkoun.db
+*.log
+ngrok
+ngrok-v3-stable-linux-arm64.tgz
