@@ -66,7 +66,7 @@ CULTURES = {
     "mil": {
         "noms": {"francais": "Mil", "fon": "Likoun", "yoruba": "Okaka",
                  "bariba": "Gawri", "dendi": "Hamo"},
-        "alias": ["petit mil", "mil chandelle"],
+        "alias": ["petit mil", "mil chandelle", "abokoun"],
         "categorie": "cereale",
         "zone": "2,1% des terres arables — extrême Nord, zone sahélienne",
         "resistance": "200-600 mm de pluie/an",
@@ -133,16 +133,18 @@ CULTURES = {
     },
 
     "ananas": {
-        "noms": {"francais": "Ananas"},
+        "noms": {"francais": "Ananas", "fon": "Ananan"},
         "categorie": "rente",
         "zone": "Sud (Atlantique)",
         "importance": "Culture d'export, diversification",
+        "cycle": "12-18 mois",
     },
 
     # ------------------------------------------------------------ TUBERCULES
     "igname": {
         "noms": {"francais": "Igname", "fon": "Tè", "yoruba": "Isu",
                  "bariba": "Yam", "dendi": "Donyi"},
+        "alias": ["fyngnin"],
         "categorie": "tubercule",
         "cycle": "8-10 mois",
         "zone": "7,7% des terres arables — Centre-Nord (Zè, Allada, Savalou, Djougou)",
@@ -225,7 +227,7 @@ CULTURES = {
 
     "patate_douce": {
         "noms": {"francais": "Patate douce", "fon": "Patat", "yoruba": "Odunkun", "bariba": "Dankali"},
-        "alias": ["patate"],
+        "alias": ["patate", "wèli", "weli", "dokouin"],
         "categorie": "tubercule",
         "cycle": "3-5 mois",
         "zone": "Tout le Bénin, surtout Nord (nutrition)",
@@ -339,13 +341,83 @@ CULTURES = {
     },
 
     "coleus": {
-        "noms": {"francais": "Pomme de terre Hausa", "fon": "Dokouin", "bariba": "Gbere"},
+        "noms": {"francais": "Pomme de terre Hausa", "bariba": "Gbere"},
+        # NOTE: le nom fon "Dokouin" attribué ici précédemment était une erreur —
+        # ce nom désigne en fait la patate douce (confirmé par un utilisateur du
+        # terrain). Le vrai nom fon du Coleus reste à vérifier avant de l'ajouter.
         "categorie": "tubercule",
         "cycle": "5-6 mois",
         "zone": "Atacora, zones de collines",
         "importance": "Culture de soudure, très rustique, résiste à la famine",
         "prix_marche": {"Natitingou": "Petit marché local, tas : 500 FCFA (culture en déclin)"},
         "recettes_post_recolte": {"bouilli": "Goût de haricot, servi en sauce"},
+    },
+
+    # ============================================================
+    # NOTE SUR CETTE SECTION : les noms en Fon ci-dessous ont été
+    # communiqués directement par un utilisateur du terrain et sont
+    # pris comme fiables. En revanche, cycle/zone/prix précis pour le
+    # Bénin ne sont pas encore vérifiés pour chaque culture : les
+    # champs non confirmés sont volontairement omis plutôt
+    # qu'inventés. À compléter progressivement avec des sources
+    # fiables (INRAB, FAO) ou un retour de terrain.
+    # ============================================================
+
+    # -------------------------------------------------------------- FRUITS
+    "coco": {
+        "noms": {"francais": "Noix de coco", "fon": "Agonkè"},
+        "categorie": "fruit",
+        "zone": "Littoral Sud Bénin",
+    },
+    "banane": {
+        "noms": {"francais": "Banane", "fon": "Kwékwé"},
+        "categorie": "fruit",
+        "zone": "Sud et Centre Bénin",
+    },
+    "canne_a_sucre": {
+        "noms": {"francais": "Canne à sucre", "fon": "Léké"},
+        "categorie": "fruit",
+    },
+    "goyave": {
+        "noms": {"francais": "Goyave", "fon": "Blèfoutou"},
+        "categorie": "fruit",
+    },
+    "avocat": {
+        "noms": {"francais": "Avocat", "fon": "Péya"},
+        "categorie": "fruit",
+    },
+
+    # --------------------------------------------------- MARAÎCHAGE / LÉGUMES
+    "crincrin": {
+        "noms": {"francais": "Crincrin (corète potagère)", "fon": "Nin-nouwi"},
+        "alias": ["corete", "corète", "nin nouwi", "ninnouwi"],
+        "categorie": "maraicher",
+        "usage": "Feuilles en sauce, très courant Sud Bénin",
+    },
+    "gombo": {
+        "noms": {"francais": "Gombo", "fon": "Févi"},
+        "categorie": "maraicher",
+        "usage": "Sauce gluante traditionnelle",
+    },
+    "gingembre": {
+        "noms": {"francais": "Gingembre", "fon": "Dotè"},
+        "categorie": "maraicher",
+    },
+    "ail": {
+        "noms": {"francais": "Ail", "fon": "Ayo"},
+        "categorie": "maraicher",
+    },
+    "poivre": {
+        "noms": {"francais": "Poivre", "fon": "Linlinkoun"},
+        "categorie": "maraicher",
+    },
+
+    # ------------------------------------------------------------ TUBERCULES (suite)
+    "vanzou": {
+        "noms": {"francais": "Vanzou", "fon": "Azyngokouin"},
+        "categorie": "tubercule",
+        "zone": "Nord Bénin",
+        "note": "Souvent semé en association avec soja, oignon, piment",
     },
 }
 
