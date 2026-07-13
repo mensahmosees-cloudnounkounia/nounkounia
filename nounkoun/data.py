@@ -419,6 +419,141 @@ CULTURES = {
         "zone": "Nord Bénin",
         "note": "Souvent semé en association avec soja, oignon, piment",
     },
+
+    # ============================================================
+    # NOTE : contrairement aux sections précédentes, les noms Fon
+    # ci-dessous ne sont PAS encore renseignés — je préfère les
+    # laisser vides plutôt que d'inventer une traduction que je ne
+    # maîtrise pas avec certitude. Si vous connaissez le nom Fon (ou
+    # Yoruba/Bariba) de l'une de ces cultures, donnez-le-moi et je
+    # l'ajoute directement. L'agronomie ci-dessous est une
+    # connaissance générale, pas spécifique au Bénin sauf mention
+    # contraire — à affiner avec des données de terrain ou INRAB/FAO.
+    # ============================================================
+
+    # --------------------------------------------------------- LÉGUMINEUSES
+    "niebe": {
+        "noms": {"francais": "Niébé"},
+        "alias": ["haricot niebe", "cowpea"],
+        "categorie": "legumineuse",
+        "cycle": "60-90 jours",
+        "usage": "Grain riche en protéines, feuilles comestibles, fixe l'azote du sol",
+        "problemes": {
+            "puceron noir": "Colonise les jeunes pousses et les gousses",
+            "bruche": "Insecte qui perce les graines stockées",
+        },
+        "solutions_naturelles": {
+            "association avec céréales": "Semé avec maïs/sorgho, protège et fixe l'azote",
+            "huile de neem au stockage": "Quelques gouttes mélangées aux graines contre la bruche",
+        },
+    },
+    "arachide": {
+        "noms": {"francais": "Arachide"},
+        "alias": ["cacahuète", "cacahuete"],
+        "categorie": "legumineuse",
+        "cycle": "90-120 jours",
+        "zone": "Centre et Nord Bénin, sols sableux",
+        "usage": "Huile, pâte d'arachide, grillée",
+        "problemes": {
+            "cercosporiose": "Taches brunes sur les feuilles",
+            "rosette": "Virus transmis par puceron, plante rabougrie",
+        },
+        "solutions_naturelles": {
+            "rotation": "Ne pas remettre 2-3 ans au même endroit",
+            "semis précoce": "Limite l'exposition au virus de la rosette",
+        },
+    },
+    "soja": {
+        "noms": {"francais": "Soja"},
+        "categorie": "legumineuse",
+        "cycle": "90-120 jours",
+        "zone": "Nord Bénin (Donga, Borgou) — culture en forte croissance",
+        "usage": "Huile, tourteau pour bétail, lait de soja",
+        "solutions_naturelles": {
+            "rotation avec coton/maïs": "Casse le cycle des ravageurs, restaure l'azote du sol",
+        },
+    },
+
+    # ------------------------------------------------------------- MARAÎCHAGE
+    "tomate": {
+        "noms": {"francais": "Tomate"},
+        "categorie": "maraicher",
+        "cycle": "60-90 jours",
+        "problemes": {
+            "mildiou": "Taches brunes, plante qui fane vite en saison humide",
+            "chenille légionnaire": "Trous dans les feuilles et les fruits",
+            "flétrissement bactérien": "Plante entière qui se fane sans jaunir d'abord",
+        },
+        "solutions_naturelles": {
+            "purin de neem": "Contre les chenilles",
+            "bouillie bordelaise": "Préventif contre le mildiou, avant la saison des pluies",
+            "paillage": "Évite les éclaboussures de terre qui propagent les maladies",
+        },
+    },
+    "piment": {
+        "noms": {"francais": "Piment"},
+        "categorie": "maraicher",
+        "cycle": "70-90 jours",
+        "problemes": {
+            "pucerons": "Feuilles recroquevillées",
+            "anthracnose": "Taches sur les fruits qui pourrissent",
+        },
+        "solutions_naturelles": {
+            "purin de neem": "Contre les pucerons",
+            "association avec basilic": "Repousse certains insectes",
+        },
+    },
+    "oignon": {
+        "noms": {"francais": "Oignon"},
+        "categorie": "maraicher",
+        "cycle": "90-120 jours",
+        "zone": "Nord Bénin (Malanville), culture irriguée en saison sèche",
+        "problemes": {
+            "mildiou": "Feuilles qui jaunissent et se courbent",
+            "thrips": "Petits insectes qui décolorent les feuilles",
+        },
+        "solutions_naturelles": {
+            "rotation": "Ne pas remettre 3 ans au même endroit",
+        },
+    },
+    "aubergine_locale": {
+        "noms": {"francais": "Aubergine locale (gboma)"},
+        "alias": ["gboma", "aubergine africaine"],
+        "categorie": "maraicher",
+        "usage": "Feuilles et fruits en sauce, très courant Sud Bénin",
+        "problemes": {
+            "doryphore": "Insecte qui mange les feuilles",
+        },
+    },
+
+    # ---------------------------------------------------------------- AGRUMES
+    "orange": {
+        "noms": {"francais": "Orange"},
+        "categorie": "agrume",
+        "zone": "Sud et Centre Bénin",
+        "problemes": {
+            "cochenille": "Insectes sur les branches et fruits",
+            "chancre citrique": "Taches liégeuses sur feuilles et fruits",
+        },
+        "solutions_naturelles": {
+            "huile de neem": "Contre la cochenille",
+        },
+    },
+    "citron": {
+        "noms": {"francais": "Citron"},
+        "categorie": "agrume",
+        "zone": "Sud et Centre Bénin",
+    },
+    "mandarine": {
+        "noms": {"francais": "Mandarine"},
+        "categorie": "agrume",
+        "zone": "Sud et Centre Bénin",
+    },
+    "pamplemousse": {
+        "noms": {"francais": "Pamplemousse"},
+        "categorie": "agrume",
+        "zone": "Sud Bénin",
+    },
 }
 
 
