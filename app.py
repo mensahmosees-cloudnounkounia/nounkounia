@@ -3,32 +3,27 @@ from flask import Flask, request, Response
 
 app = Flask(__name__)
 
-# === TOKENS - fix du typo getenv ===
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN", "Nounkoun2026").strip()
 VERIFY_TOKEN_2 = os.getenv("WHATSAPP_VERIFY_TOKEN", "Nounkoun2026").strip()
 ALLOWED_TOKENS = [t for t in [VERIFY_TOKEN, VERIFY_TOKEN_2, "Nounkoun2026", "nounkoun2026"] if t]
 
-WHATSAPP_TOKEN = os.getenv("WHATSAPP_TOKEN", "").strip()
-PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID", "").strip()
-
-print(f"[BOOT] VERIFY_TOKEN={VERIFY_TOKEN} | VERIFY_TOKEN_2={VERIFY_TOKEN_2}")
+print(f"[BOOT] VERIFY_TOKEN={VERIFY_TOKEN}")
 
 @app.route("/", methods=["GET", "HEAD"])
 def home():
     return "Nounkounia V8.1 LIVE - META DIRECT OK - Token=Nounkoun2026", 200
 
-@app.route("/webhook", methods=["GET"])
-def verify_webhook():
-    mode = request.args.get("hub.mode")
-    token = (request.args.get("hub.verify_token") or "").strip()
-    challenge = request.args.get("hub.challenge")
-    print(f"[VERIFY] mode={mode} token={token} attendu={ALLOWED_TOKENS}")
-    if mode == "subscribe" and token in ALLOWED_TOKENS:
-        return challenge, 200
-    return "token mismatch", 403
+@app.route("/webhook", methods=["GET", "POST"])
+def webhook():
+    if request.method == "GET":
+        mode = request.args.get("hub.mode")
+        token = (request.args.get("hub.verify_token") or "").strip()
+        challenge = request.args.get("hub.challenge")
+        print(f"[VERIFY] mode={mode} token={token}")
+        if mode == "subscribe" and token in ALLOWED_TOKENS:
+            return challenge, 200
+        return "token mismatch", 403
 
-@app.route("/webhook", methods=["POST", "GET"])
-def handle_whatsapp():
     try:
         body = (request.values.get("Body","") or request.args.get("Body","") or request.args.get("message","") or "").strip().lower()
         if not body:
@@ -54,15 +49,14 @@ def handle_whatsapp():
             twiml = f'<?xml version="1.0" encoding="UTF-8"?><Response><Message>{reply}</Message></Response>'
             return Response(twiml, mimetype="text/xml")
         
-        # Pour META direct
         if request.is_json:
             print(f"[META POST] {request.get_json()}")
-        
+
         return reply, 200
     except Exception as e:
         print(f"Erreur {e}")
         return "Bienvenue Nounkoun BEPC. Envoie TERRE ACHETER AIDE EAU ARGENT", 200
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.getenv("PORT", "10000"))
     app.run(host="0.0.0.0", port=port)
